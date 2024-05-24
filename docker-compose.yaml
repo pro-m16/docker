@@ -1,0 +1,16 @@
+# This file is supposed to hold all the database config files.
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:3000"
+  db:
+    image: "mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - db-data:/ad2
+
+volumes:
+  db-data:
